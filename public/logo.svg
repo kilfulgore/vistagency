@@ -16,6 +16,6 @@
 	<circle cx="116" cy="50" r="49" fill="#1b3434" opacity=".32" filter="url(#soft-shadow)" />
 	<circle cx="116" cy="49" r="45" fill="url(#globe)" stroke="#202124" stroke-width="6" />
 	<ellipse cx="101" cy="31" rx="15" ry="10" fill="#fff" opacity=".36" />
-	<text x="166.5" y="126" text-anchor="middle" fill="#087fbd" font-family="Georgia, 'Times New Roman', serif" font-size="68" font-weight="700" letter-spacing="-4">VISTA</text>
-	<text x="166.5" y="174" text-anchor="middle" fill="#087fbd" font-family="Georgia, 'Times New Roman', serif" font-size="21" letter-spacing=".2">INSURANCE AGENCY</text>
+	<text x="166.5" y="126" text-anchor="middle" textLength="326" lengthAdjust="spacingAndGlyphs" fill="#087fbd" font-family="Georgia, 'Times New Roman', serif" font-size="68" font-weight="700">VISTA</text>
+	<text x="166.5" y="174" text-anchor="middle" textLength="266" lengthAdjust="spacingAndGlyphs" fill="#087fbd" font-family="Georgia, 'Times New Roman', serif" font-size="21">INSURANCE AGENCY</text>
 </svg>
