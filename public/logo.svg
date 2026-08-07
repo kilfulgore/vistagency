@@ -1,8 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 177" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 333 183" role="img" aria-labelledby="title desc">
 	<title id="title">Vista Insurance Agency</title>
-	<desc id="desc">Vista Insurance Agency logo with a blue wordmark and black curved roof.</desc>
-	<path fill="none" stroke="#202124" stroke-linecap="round" stroke-width="10" d="M7 64C40 13 111 1 166 8c54 7 86 42 157 55" />
-	<circle cx="118" cy="47" r="48" fill="#82b9b0" stroke="#202124" stroke-width="7" />
-	<path fill="#087fbd" d="M0 75h35l28 68 26-68h31l-41 91H44zM116 75h31v91h-31zM156 75h82v24h-51v11h43v22h-43v10h51v24h-82zM247 75h83v24h-52v11h43v22h-43v10h52v24h-83z" />
-	<text x="33" y="176" fill="#087fbd" font-family="Georgia, serif" font-size="22" letter-spacing="1">INSURANCE AGENCY</text>
+	<desc id="desc">Vista Insurance Agency logo with a blue wordmark, black curved roof, and teal globe.</desc>
+	<defs>
+		<radialGradient id="globe" cx="38%" cy="35%" r="68%">
+			<stop offset="0" stop-color="#effff9" />
+			<stop offset=".18" stop-color="#b6e5d5" />
+			<stop offset=".62" stop-color="#5a9c93" />
+			<stop offset="1" stop-color="#286a68" />
+		</radialGradient>
+		<filter id="soft-shadow" x="-25%" y="-25%" width="150%" height="150%">
+			<feGaussianBlur stdDeviation="2.5" />
+		</filter>
+	</defs>
+	<path fill="#202124" d="M0 67C34 13 87 1 137 4c49 3 84 25 113 41 26 14 48 22 83 27-34 0-63-4-91-14-30-11-57-30-88-39C99 6 48 19 0 67Z" />
+	<circle cx="116" cy="50" r="49" fill="#1b3434" opacity=".32" filter="url(#soft-shadow)" />
+	<circle cx="116" cy="49" r="45" fill="url(#globe)" stroke="#202124" stroke-width="6" />
+	<ellipse cx="101" cy="31" rx="15" ry="10" fill="#fff" opacity=".36" />
+	<text x="2" y="126" fill="#087fbd" font-family="Georgia, 'Times New Roman', serif" font-size="69" font-weight="700" letter-spacing="-5">VISTA</text>
+	<text x="34" y="174" fill="#087fbd" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing=".3">INSURANCE AGENCY</text>
 </svg>
