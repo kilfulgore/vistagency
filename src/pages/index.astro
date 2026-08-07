@@ -20,8 +20,7 @@ const serviceGroups = [
 <Layout>
 	<header class="site-header">
 		<a class="brand" href="#top" aria-label="Vista Insurance Agency home">
-			<span class="brand-mark">V</span>
-			<span>Vista <strong>Insurance Agency</strong></span>
+			<img src="/logo.svg" alt="Vista Insurance Agency" />
 		</a>
 		<nav aria-label="Main navigation">
 			<a href="#services">Services</a>
@@ -102,20 +101,19 @@ const serviceGroups = [
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
 
-	:global(:root) { --ink: #173b3b; --muted: #627373; --cream: #f5f3ed; --paper: #fffdfa; --coral: #e8785d; --line: #d9dfd9; }
+	:global(:root) { --ink: #123b5d; --muted: #355a73; --blue: #dff3fb; --paper: #f8fcfe; --coral: #d9634e; --line: #a9cedd; }
 	:global(*) { box-sizing: border-box; }
 	:global(html) { scroll-behavior: smooth; }
-	:global(body) { background: var(--cream); color: var(--ink); font-family: 'DM Sans', sans-serif; }
+	:global(body) { background: var(--blue); color: var(--ink); font-family: 'DM Sans', sans-serif; }
 	.site-header, .section-wrap, .site-footer { max-width: 1180px; margin: 0 auto; padding-left: 5vw; padding-right: 5vw; }
 	.site-header { display: flex; align-items: center; justify-content: space-between; padding-top: 28px; padding-bottom: 28px; }
-	.brand { display: flex; align-items: center; gap: 11px; color: var(--ink); font-size: 15px; font-weight: 500; letter-spacing: .02em; text-decoration: none; }
-	.brand strong { font-weight: 700; }
-	.brand-mark { display: grid; place-items: center; width: 34px; height: 34px; background: var(--ink); color: var(--cream); font-family: 'Playfair Display', serif; font-size: 22px; font-style: italic; }
+	.brand { display: block; color: var(--ink); text-decoration: none; }
+	.brand img { display: block; height: 76px; width: auto; }
 	nav { display: flex; align-items: center; gap: 32px; }
 	nav a { color: var(--muted); font-size: 13px; text-decoration: none; }
 	nav a:hover, .site-footer a:hover { color: var(--coral); }
 	.nav-contact { border-bottom: 1px solid var(--coral); color: var(--ink); padding-bottom: 4px; }
-	.hero { display: grid; grid-template-columns: minmax(0, 1fr) 250px; align-items: end; gap: 5vw; max-width: 1180px; margin: 0 auto; padding: 105px 5vw 125px; background: radial-gradient(circle at 78% 38%, #e6ece5 0, transparent 31%), var(--cream); }
+	.hero { display: grid; grid-template-columns: minmax(0, 1fr) 250px; align-items: end; gap: 5vw; max-width: 1180px; margin: 0 auto; padding: 105px 5vw 125px; background: radial-gradient(circle at 78% 38%, #c7e9f4 0, transparent 31%), var(--blue); }
 	.hero-copy { max-width: 730px; }
 	.eyebrow { color: var(--coral); font-size: 11px; font-weight: 700; letter-spacing: .16em; margin: 0 0 22px; text-transform: uppercase; }
 	h1, h2 { font-family: 'Playfair Display', serif; font-weight: 500; letter-spacing: 0; line-height: 1.05; margin: 0; }
@@ -143,14 +141,14 @@ const serviceGroups = [
 	li { color: var(--muted); font-size: 14px; line-height: 1.9; }
 	li::before { color: var(--coral); content: '—'; margin-right: 9px; }
 	.service-footnote { color: var(--muted); font-size: 13px; line-height: 1.7; margin: 25px 0 0; }
-	.about { display: grid; grid-template-columns: 1fr 2fr; gap: 8vw; background: var(--ink); color: var(--cream); }
+	.about { display: grid; grid-template-columns: 1fr 2fr; gap: 8vw; background: var(--ink); color: var(--blue); }
 	.about-label { border-top: 1px solid rgba(255,255,255,.3); padding-top: 15px; }
 	.about-label span { display: block; color: #a9bfba; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
 	.about-label strong { display: block; font-family: 'Playfair Display', serif; font-size: clamp(3rem, 5vw, 5.7rem); font-weight: 500; margin-top: 8px; }
 	.about-copy { max-width: 650px; }
 	.about-copy h2 { margin-bottom: 30px; }
-	.about-copy p:not(.eyebrow):not(.highlight) { color: #bfd0cb; font-size: 15px; line-height: 1.8; margin: 0 0 18px; }
-	.highlight { border-left: 2px solid var(--coral); color: var(--cream); font-family: 'Playfair Display', serif; font-size: 20px; font-style: italic; line-height: 1.5; margin: 30px 0 0; padding-left: 16px; }
+	.about-copy p:not(.eyebrow):not(.highlight) { color: #d5e9f2; font-size: 15px; line-height: 1.8; margin: 0 0 18px; }
+	.highlight { border-left: 2px solid var(--coral); color: var(--blue); font-family: 'Playfair Display', serif; font-size: 20px; font-style: italic; line-height: 1.5; margin: 30px 0 0; padding-left: 16px; }
 	.contact { display: grid; grid-template-columns: 1fr 1fr; gap: 8vw; }
 	.contact h2 { margin-bottom: 10px; }
 	.contact-details { border-top: 1px solid var(--line); padding-top: 15px; }
@@ -161,5 +159,5 @@ const serviceGroups = [
 	.hours { color: var(--ink); font-size: 13px; font-weight: 600; margin-top: 20px; }
 	.site-footer { border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 20px; padding-top: 22px; padding-bottom: 27px; color: var(--muted); font-size: 11px; letter-spacing: .02em; }
 	.site-footer a { color: var(--ink); text-decoration: none; }
-	@media (max-width: 700px) { .site-header { align-items: flex-start; padding-top: 20px; } nav { gap: 12px; } nav a:not(.nav-contact) { display: none; } .hero { display: block; padding-top: 72px; padding-bottom: 80px; } .hero-note { margin-top: 55px; } .section-wrap { padding-top: 70px; padding-bottom: 70px; } .section-heading { display: block; } .section-heading h2 { max-width: 340px; } .service-grid, .about, .contact { grid-template-columns: 1fr; } .service-card { min-height: 0; padding: 25px; } .about { gap: 42px; } .site-footer { align-items: flex-start; flex-direction: column; gap: 8px; } }
+	@media (max-width: 700px) { .site-header { align-items: flex-start; padding-top: 20px; } .brand img { height: 58px; } nav { gap: 12px; } nav a:not(.nav-contact) { display: none; } .hero { display: block; padding-top: 72px; padding-bottom: 80px; } .hero-note { margin-top: 55px; } .section-wrap { padding-top: 70px; padding-bottom: 70px; } .section-heading { display: block; } .section-heading h2 { max-width: 340px; } .service-grid, .about, .contact { grid-template-columns: 1fr; } .service-card { min-height: 0; padding: 25px; } .about { gap: 42px; } .site-footer { align-items: flex-start; flex-direction: column; gap: 8px; } }
 </style>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 177" role="img" aria-labelledby="title desc">
+	<title id="title">Vista Insurance Agency</title>
+	<desc id="desc">Vista Insurance Agency logo with a blue wordmark and black curved roof.</desc>
+	<path fill="none" stroke="#202124" stroke-linecap="round" stroke-width="10" d="M7 64C40 13 111 1 166 8c54 7 86 42 157 55" />
+	<circle cx="118" cy="47" r="48" fill="#82b9b0" stroke="#202124" stroke-width="7" />
+	<path fill="#087fbd" d="M0 75h35l28 68 26-68h31l-41 91H44zM116 75h31v91h-31zM156 75h82v24h-51v11h43v22h-43v10h51v24h-82zM247 75h83v24h-52v11h43v22h-43v10h52v24h-83z" />
+	<text x="33" y="176" fill="#087fbd" font-family="Georgia, serif" font-size="22" letter-spacing="1">INSURANCE AGENCY</text>
+</svg>
