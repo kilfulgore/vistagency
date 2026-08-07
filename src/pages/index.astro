@@ -1,11 +1,165 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const serviceGroups = [
+	{
+		title: 'Home & Property',
+		items: ['Homeowners', 'Dwelling Fire', 'Renters', 'Condo', 'Monoline'],
+	},
+	{
+		title: 'Auto Insurance',
+		items: ['Liability', 'Full Coverage', 'Rental', 'Towing'],
+	},
+	{
+		title: 'Business Insurance',
+		items: ['BOP', 'Commercial Auto', 'General Liability', 'Workers Compensation'],
+	},
+];
 ---
 
 <Layout>
-	<Welcome />
+	<header class="site-header">
+		<a class="brand" href="#top" aria-label="Vista Insurance Agency home">
+			<span class="brand-mark">V</span>
+			<span>Vista <strong>Insurance Agency</strong></span>
+		</a>
+		<nav aria-label="Main navigation">
+			<a href="#services">Services</a>
+			<a href="#about">About us</a>
+			<a class="nav-contact" href="#contact">Contact</a>
+		</nav>
+	</header>
+
+	<main id="top">
+		<section class="hero">
+			<div class="hero-copy">
+				<p class="eyebrow">Independent insurance, personal service</p>
+				<h1>Coverage that keeps you moving <em>forward.</em></h1>
+				<p class="hero-intro">For more than 25 years, Vista Insurance Agency has helped families and businesses find dependable coverage at a price that fits.</p>
+				<div class="hero-actions">
+					<a class="button button-primary" href="tel:18472555880">Call 847-255-5880</a>
+					<a class="button button-secondary" href="mailto:info@vistagency.com">Email our team <span aria-hidden="true">↗</span></a>
+				</div>
+			</div>
+			<div class="hero-note">
+				<span class="note-line"></span>
+				<p>Local guidance.<br /><strong>Broad protection.</strong></p>
+			</div>
+		</section>
+
+		<section class="services section-wrap" id="services">
+			<div class="section-heading">
+				<p class="eyebrow">What we protect</p>
+				<h2>Insurance built around <em>your life.</em></h2>
+			</div>
+			<div class="service-grid">
+				{serviceGroups.map((group, index) => (
+					<article class="service-card">
+						<span class="service-number">0{index + 1}</span>
+						<h3>{group.title}</h3>
+						<ul>
+							{group.items.map((item) => <li>{item}</li>)}
+						</ul>
+					</article>
+				))}
+			</div>
+			<p class="service-footnote">We also offer health and life insurance. Tell us what you need and we will help you find the right options.</p>
+		</section>
+
+		<section class="about section-wrap" id="about">
+			<div class="about-label"><span>Since</span><strong>2001</strong></div>
+			<div class="about-copy">
+				<p class="eyebrow">About Vista</p>
+				<h2>Independent by choice.<br /><em>Here for you.</em></h2>
+				<p>Vista Insurance Agency is a full independent agency offering quality insurance services. Our duty is first and foremost to our clients: to provide the best service and the best coverage at the best possible price.</p>
+				<p>With close partnerships across a variety of insurance companies, we can compare rates and options to find the right policy for your history, preference, and budget. Our goal is to build long-lasting relationships based on trust, quality, and friendliness.</p>
+				<p class="highlight">Exceptional customer service, including 24/7 claims service.</p>
+			</div>
+		</section>
+
+		<section class="contact section-wrap" id="contact">
+			<div>
+				<p class="eyebrow">Let’s talk</p>
+				<h2>We would be pleased<br />to hear from <em>you.</em></h2>
+			</div>
+			<div class="contact-details">
+				<p>Let us know your needs and questions. We will be more than happy to help.</p>
+				<a class="contact-link" href="tel:18472555880">847-255-5880 <span aria-hidden="true">↗</span></a>
+				<a class="contact-link" href="mailto:info@vistagency.com">info@vistagency.com <span aria-hidden="true">↗</span></a>
+				<address>5105 Tollview Drive, Suite 100<br />Rolling Meadows, IL 60008</address>
+				<p class="hours">Mon–Friday · 9am–6pm</p>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<span>Vista Insurance Agency</span>
+		<span>Office 847-255-5880 · Fax 847-255-5897</span>
+		<a href="mailto:info@vistagency.com">info@vistagency.com</a>
+	</footer>
 </Layout>
+
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
+
+	:global(:root) { --ink: #173b3b; --muted: #627373; --cream: #f5f3ed; --paper: #fffdfa; --coral: #e8785d; --line: #d9dfd9; }
+	:global(*) { box-sizing: border-box; }
+	:global(html) { scroll-behavior: smooth; }
+	:global(body) { background: var(--cream); color: var(--ink); font-family: 'DM Sans', sans-serif; }
+	.site-header, .section-wrap, .site-footer { max-width: 1180px; margin: 0 auto; padding-left: 5vw; padding-right: 5vw; }
+	.site-header { display: flex; align-items: center; justify-content: space-between; padding-top: 28px; padding-bottom: 28px; }
+	.brand { display: flex; align-items: center; gap: 11px; color: var(--ink); font-size: 15px; font-weight: 500; letter-spacing: .02em; text-decoration: none; }
+	.brand strong { font-weight: 700; }
+	.brand-mark { display: grid; place-items: center; width: 34px; height: 34px; background: var(--ink); color: var(--cream); font-family: 'Playfair Display', serif; font-size: 22px; font-style: italic; }
+	nav { display: flex; align-items: center; gap: 32px; }
+	nav a { color: var(--muted); font-size: 13px; text-decoration: none; }
+	nav a:hover, .site-footer a:hover { color: var(--coral); }
+	.nav-contact { border-bottom: 1px solid var(--coral); color: var(--ink); padding-bottom: 4px; }
+	.hero { display: grid; grid-template-columns: minmax(0, 1fr) 250px; align-items: end; gap: 5vw; max-width: 1180px; margin: 0 auto; padding: 105px 5vw 125px; background: radial-gradient(circle at 78% 38%, #e6ece5 0, transparent 31%), var(--cream); }
+	.hero-copy { max-width: 730px; }
+	.eyebrow { color: var(--coral); font-size: 11px; font-weight: 700; letter-spacing: .16em; margin: 0 0 22px; text-transform: uppercase; }
+	h1, h2 { font-family: 'Playfair Display', serif; font-weight: 500; letter-spacing: 0; line-height: 1.05; margin: 0; }
+	h1 { font-size: clamp(3.5rem, 7vw, 6.8rem); }
+	h1 em, h2 em { color: var(--coral); font-style: italic; }
+	.hero-intro { color: var(--muted); font-size: 16px; line-height: 1.7; margin: 31px 0 34px; max-width: 520px; }
+	.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+	.button { display: inline-flex; align-items: center; gap: 13px; font-size: 13px; font-weight: 600; padding: 15px 20px; text-decoration: none; }
+	.button-primary { background: var(--coral); color: #fff; }
+	.button-secondary { border: 1px solid var(--line); color: var(--ink); }
+	.button:hover { transform: translateY(-2px); }
+	.hero-note { align-self: center; display: flex; gap: 16px; color: var(--muted); font-family: 'Playfair Display', serif; font-size: 19px; font-style: italic; line-height: 1.35; }
+	.hero-note p { margin: 0; }
+	.hero-note strong { color: var(--ink); font-weight: 500; }
+	.note-line { display: block; width: 1px; height: 67px; background: var(--coral); }
+	.section-wrap { padding-top: 105px; padding-bottom: 105px; }
+	.services { border-top: 1px solid var(--line); }
+	.section-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 48px; }
+	h2 { font-size: clamp(2.4rem, 4vw, 4.4rem); }
+	.service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+	.service-card { background: var(--paper); min-height: 250px; padding: 29px; }
+	.service-number { color: var(--coral); font-size: 11px; font-weight: 700; letter-spacing: .12em; }
+	h3 { font-family: 'Playfair Display', serif; font-size: 25px; font-weight: 500; margin: 38px 0 18px; }
+	ul { list-style: none; margin: 0; padding: 0; }
+	li { color: var(--muted); font-size: 14px; line-height: 1.9; }
+	li::before { color: var(--coral); content: '—'; margin-right: 9px; }
+	.service-footnote { color: var(--muted); font-size: 13px; line-height: 1.7; margin: 25px 0 0; }
+	.about { display: grid; grid-template-columns: 1fr 2fr; gap: 8vw; background: var(--ink); color: var(--cream); }
+	.about-label { border-top: 1px solid rgba(255,255,255,.3); padding-top: 15px; }
+	.about-label span { display: block; color: #a9bfba; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+	.about-label strong { display: block; font-family: 'Playfair Display', serif; font-size: clamp(3rem, 5vw, 5.7rem); font-weight: 500; margin-top: 8px; }
+	.about-copy { max-width: 650px; }
+	.about-copy h2 { margin-bottom: 30px; }
+	.about-copy p:not(.eyebrow):not(.highlight) { color: #bfd0cb; font-size: 15px; line-height: 1.8; margin: 0 0 18px; }
+	.highlight { border-left: 2px solid var(--coral); color: var(--cream); font-family: 'Playfair Display', serif; font-size: 20px; font-style: italic; line-height: 1.5; margin: 30px 0 0; padding-left: 16px; }
+	.contact { display: grid; grid-template-columns: 1fr 1fr; gap: 8vw; }
+	.contact h2 { margin-bottom: 10px; }
+	.contact-details { border-top: 1px solid var(--line); padding-top: 15px; }
+	.contact-details > p:first-child { color: var(--muted); font-size: 14px; line-height: 1.7; margin: 0 0 25px; max-width: 340px; }
+	.contact-link { color: var(--ink); display: block; font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 2.5vw, 2.3rem); margin: 8px 0; text-decoration: none; }
+	.contact-link span { color: var(--coral); font-family: 'DM Sans', sans-serif; font-size: 16px; vertical-align: middle; }
+	address { color: var(--muted); font-size: 14px; font-style: normal; line-height: 1.7; margin-top: 37px; }
+	.hours { color: var(--ink); font-size: 13px; font-weight: 600; margin-top: 20px; }
+	.site-footer { border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 20px; padding-top: 22px; padding-bottom: 27px; color: var(--muted); font-size: 11px; letter-spacing: .02em; }
+	.site-footer a { color: var(--ink); text-decoration: none; }
+	@media (max-width: 700px) { .site-header { align-items: flex-start; padding-top: 20px; } nav { gap: 12px; } nav a:not(.nav-contact) { display: none; } .hero { display: block; padding-top: 72px; padding-bottom: 80px; } .hero-note { margin-top: 55px; } .section-wrap { padding-top: 70px; padding-bottom: 70px; } .section-heading { display: block; } .section-heading h2 { max-width: 340px; } .service-grid, .about, .contact { grid-template-columns: 1fr; } .service-card { min-height: 0; padding: 25px; } .about { gap: 42px; } .site-footer { align-items: flex-start; flex-direction: column; gap: 8px; } }
+</style>
