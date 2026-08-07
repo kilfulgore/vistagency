@@ -3,6 +3,6 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://kilfulgore.github.io',
-	base: '/vistagency',
+	site: 'https://vistagency.com',
+	base: '/vistagency', // Matches your project subpath
 });
