@@ -18,6 +18,15 @@ const serviceGroups = [
 ---
 
 <Layout>
+	<div class="utility-bar">
+		<div class="utility-inner">
+			<span>Serving families and businesses since 2001</span>
+			<div class="utility-links">
+				<span>Mon–Fri · 9am–6pm</span>
+				<a href="tel:18472555880">847-255-5880</a>
+			</div>
+		</div>
+	</div>
 	<header class="site-header">
 		<a class="brand" href="#top" aria-label="Vista Insurance Agency home">
 			<img src="/logo.svg" alt="Vista Insurance Agency" />
@@ -33,12 +42,13 @@ const serviceGroups = [
 		<section class="hero">
 			<div class="hero-copy">
 				<p class="eyebrow">Independent insurance, personal service</p>
-				<h1>Coverage that keeps you moving <em>forward.</em></h1>
-				<p class="hero-intro">For more than 25 years, Vista Insurance Agency has helped families and businesses find dependable coverage at a price that fits.</p>
+				<h1>Protect what matters. <em>Plan what’s next.</em></h1>
+				<p class="hero-intro">Vista Insurance Agency helps families and businesses compare coverage from trusted carriers, with personal guidance from people who know your community.</p>
 				<div class="hero-actions">
-					<a class="button button-primary" href="tel:18472555880">Call 847-255-5880</a>
-					<a class="button button-secondary" href="mailto:info@vistagency.com">Email our team <span aria-hidden="true">↗</span></a>
+					<a class="button button-primary" href="mailto:info@vistagency.com?subject=Insurance%20quote%20request">Request a quote <span aria-hidden="true">↗</span></a>
+					<a class="button button-secondary" href="tel:18472555880">Call 847-255-5880</a>
 				</div>
+				<p class="hero-assurance"><span aria-hidden="true">✓</span> No-pressure guidance · Multiple insurance carriers · 24/7 claims service</p>
 			</div>
 			<div class="hero-note">
 				<span class="note-line"></span>
@@ -49,7 +59,10 @@ const serviceGroups = [
 		<section class="services section-wrap" id="services">
 			<div class="section-heading">
 				<p class="eyebrow">What we protect</p>
-				<h2>Insurance built around <em>your life.</em></h2>
+				<div>
+					<h2>Insurance built around <em>your life.</em></h2>
+					<p class="section-intro">Whether you are protecting a new home, a growing business, or the people you love, we will help you understand your options.</p>
+				</div>
 			</div>
 			<div class="service-grid">
 				{serviceGroups.map((group, index) => (
@@ -59,6 +72,7 @@ const serviceGroups = [
 						<ul>
 							{group.items.map((item) => <li>{item}</li>)}
 						</ul>
+						<a class="card-link" href="#contact">Talk through your options <span aria-hidden="true">↗</span></a>
 					</article>
 				))}
 			</div>
@@ -79,12 +93,13 @@ const serviceGroups = [
 		<section class="contact section-wrap" id="contact">
 			<div>
 				<p class="eyebrow">Let’s talk</p>
-				<h2>We would be pleased<br />to hear from <em>you.</em></h2>
+				<h2>Get the right coverage<br />with a <em>real conversation.</em></h2>
 			</div>
 			<div class="contact-details">
-				<p>Let us know your needs and questions. We will be more than happy to help.</p>
+				<p>Tell us what you are protecting and what matters to you. We will help you compare practical options without the pressure.</p>
+				<a class="contact-link" href="mailto:info@vistagency.com?subject=Insurance%20quote%20request">Request a quote <span aria-hidden="true">↗</span></a>
 				<a class="contact-link" href="tel:18472555880">847-255-5880 <span aria-hidden="true">↗</span></a>
-				<a class="contact-link" href="mailto:info@vistagency.com">info@vistagency.com <span aria-hidden="true">↗</span></a>
+				<a class="email-link" href="mailto:info@vistagency.com">info@vistagency.com</a>
 				<address>5105 Tollview Drive, Suite 100<br />Rolling Meadows, IL 60008</address>
 				<p class="hours">Mon–Friday · 9am–6pm</p>
 			</div>
@@ -105,6 +120,12 @@ const serviceGroups = [
 	:global(*) { box-sizing: border-box; }
 	:global(html) { scroll-behavior: smooth; }
 	:global(body) { background: var(--blue); color: var(--ink); font-family: 'DM Sans', sans-serif; }
+	:global(a) { transition: color .2s ease, background-color .2s ease, border-color .2s ease, transform .2s ease; }
+	:global(:focus-visible) { outline: 3px solid var(--coral); outline-offset: 4px; }
+	.utility-bar { background: var(--ink); color: #d5e9f2; font-size: 11px; letter-spacing: .04em; }
+	.utility-inner { display: flex; justify-content: space-between; gap: 20px; max-width: 1180px; margin: 0 auto; padding: 9px 5vw; }
+	.utility-links { display: flex; gap: 22px; }
+	.utility-links a { color: #fff; font-weight: 700; text-decoration: none; }
 	.site-header, .section-wrap, .site-footer { max-width: 1180px; margin: 0 auto; padding-left: 5vw; padding-right: 5vw; }
 	.site-header { display: flex; align-items: center; justify-content: space-between; padding-top: 28px; padding-bottom: 28px; }
 	.brand { display: block; color: var(--ink); text-decoration: none; }
@@ -121,10 +142,12 @@ const serviceGroups = [
 	h1 em, h2 em { color: var(--coral); font-style: italic; }
 	.hero-intro { color: var(--muted); font-size: 16px; line-height: 1.7; margin: 31px 0 34px; max-width: 520px; }
 	.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-	.button { display: inline-flex; align-items: center; gap: 13px; font-size: 13px; font-weight: 600; padding: 15px 20px; text-decoration: none; }
+	.button { display: inline-flex; align-items: center; gap: 13px; font-size: 13px; font-weight: 700; padding: 15px 20px; text-decoration: none; }
 	.button-primary { background: var(--coral); color: #fff; }
 	.button-secondary { border: 1px solid var(--line); color: var(--ink); }
 	.button:hover { transform: translateY(-2px); }
+	.hero-assurance { color: var(--muted); font-size: 12px; line-height: 1.6; margin: 22px 0 0; }
+	.hero-assurance span { color: var(--coral); font-weight: 700; margin-right: 5px; }
 	.hero-note { align-self: center; display: flex; gap: 16px; color: var(--muted); font-family: 'Playfair Display', serif; font-size: 19px; font-style: italic; line-height: 1.35; }
 	.hero-note p { margin: 0; }
 	.hero-note strong { color: var(--ink); font-weight: 500; }
@@ -133,13 +156,17 @@ const serviceGroups = [
 	.services { border-top: 1px solid var(--line); }
 	.section-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 48px; }
 	h2 { font-size: clamp(2.4rem, 4vw, 4.4rem); }
+	.section-intro { color: var(--muted); font-size: 14px; line-height: 1.7; margin: 20px 0 0; max-width: 500px; }
 	.service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
-	.service-card { background: var(--paper); min-height: 250px; padding: 29px; }
+	.service-card { background: var(--paper); min-height: 310px; padding: 29px; }
 	.service-number { color: var(--coral); font-size: 11px; font-weight: 700; letter-spacing: .12em; }
 	h3 { font-family: 'Playfair Display', serif; font-size: 25px; font-weight: 500; margin: 38px 0 18px; }
 	ul { list-style: none; margin: 0; padding: 0; }
 	li { color: var(--muted); font-size: 14px; line-height: 1.9; }
 	li::before { color: var(--coral); content: '—'; margin-right: 9px; }
+	.card-link { border-bottom: 1px solid var(--coral); color: var(--ink); display: inline-flex; font-size: 12px; font-weight: 700; gap: 9px; margin-top: 25px; padding-bottom: 4px; text-decoration: none; }
+	.card-link span { color: var(--coral); }
+	.card-link:hover { color: var(--coral); }
 	.service-footnote { color: var(--muted); font-size: 13px; line-height: 1.7; margin: 25px 0 0; }
 	.about { display: grid; grid-template-columns: 1fr 2fr; gap: 8vw; background: var(--ink); color: var(--blue); }
 	.about-label { border-top: 1px solid rgba(255,255,255,.3); padding-top: 15px; }
@@ -155,9 +182,11 @@ const serviceGroups = [
 	.contact-details > p:first-child { color: var(--muted); font-size: 14px; line-height: 1.7; margin: 0 0 25px; max-width: 340px; }
 	.contact-link { color: var(--ink); display: block; font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 2.5vw, 2.3rem); margin: 8px 0; text-decoration: none; }
 	.contact-link span { color: var(--coral); font-family: 'DM Sans', sans-serif; font-size: 16px; vertical-align: middle; }
+	.email-link { color: var(--muted); display: inline-block; font-size: 14px; margin-top: 10px; text-decoration: underline; text-underline-offset: 4px; }
 	address { color: var(--muted); font-size: 14px; font-style: normal; line-height: 1.7; margin-top: 37px; }
 	.hours { color: var(--ink); font-size: 13px; font-weight: 600; margin-top: 20px; }
 	.site-footer { border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 20px; padding-top: 22px; padding-bottom: 27px; color: var(--muted); font-size: 11px; letter-spacing: .02em; }
 	.site-footer a { color: var(--ink); text-decoration: none; }
-	@media (max-width: 700px) { .site-header { align-items: flex-start; padding-top: 20px; } .brand img { height: 72px; } nav { gap: 12px; } nav a:not(.nav-contact) { display: none; } .hero { display: block; padding-top: 72px; padding-bottom: 80px; } .hero-note { margin-top: 55px; } .section-wrap { padding-top: 70px; padding-bottom: 70px; } .section-heading { display: block; } .section-heading h2 { max-width: 340px; } .service-grid, .about, .contact { grid-template-columns: 1fr; } .service-card { min-height: 0; padding: 25px; } .about { gap: 42px; } .site-footer { align-items: flex-start; flex-direction: column; gap: 8px; } }
+	@media (prefers-reduced-motion: reduce) { :global(html) { scroll-behavior: auto; } :global(a) { transition: none; } }
+	@media (max-width: 700px) { .utility-inner { align-items: flex-start; flex-direction: column; gap: 5px; } .utility-links { gap: 14px; } .site-header { align-items: flex-start; padding-top: 20px; } .brand img { height: 72px; } nav { gap: 12px; } nav a:not(.nav-contact) { display: none; } .hero { display: block; padding-top: 72px; padding-bottom: 80px; } .hero-note { margin-top: 55px; } .section-wrap { padding-top: 70px; padding-bottom: 70px; } .section-heading { display: block; } .section-heading h2 { max-width: 340px; } .service-grid, .about, .contact { grid-template-columns: 1fr; } .service-card { min-height: 0; padding: 25px; } .about { gap: 42px; } .site-footer { align-items: flex-start; flex-direction: column; gap: 8px; } }
 </style>
