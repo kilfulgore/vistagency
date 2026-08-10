@@ -32,9 +32,19 @@ const serviceGroups = [
 			<img src="/logo.svg" alt="Vista Insurance Agency" />
 		</a>
 		<nav aria-label="Main navigation">
-			<a href="#services">Services</a>
-			<a href="#about">About us</a>
-			<a class="nav-contact" href="#contact">Contact</a>
+				<div class="desktop-nav-links">
+					<a href="#services">Services</a>
+					<a href="#about">About us</a>
+					<a class="nav-contact" href="#contact">Contact</a>
+				</div>
+				<details class="mobile-nav">
+					<summary>Menu</summary>
+					<div class="mobile-nav-links">
+						<a href="#services">Services</a>
+						<a href="#about">About us</a>
+						<a href="#contact">Contact</a>
+					</div>
+				</details>
 		</nav>
 	</header>
 
@@ -130,10 +140,12 @@ const serviceGroups = [
 	.site-header { display: flex; align-items: center; justify-content: space-between; padding-top: 28px; padding-bottom: 28px; }
 	.brand { display: block; color: var(--ink); text-decoration: none; }
 	.brand img { display: block; height: 96px; width: auto; }
-	nav { display: flex; align-items: center; gap: 32px; }
+	nav { display: flex; align-items: center; }
+	.desktop-nav-links { display: flex; align-items: center; gap: 32px; }
 	nav a { color: var(--muted); font-size: 13px; text-decoration: none; }
 	nav a:hover, .site-footer a:hover { color: var(--coral); }
 	.nav-contact { border-bottom: 1px solid var(--coral); color: var(--ink); padding-bottom: 4px; }
+	.mobile-nav { display: none; }
 	.hero { display: grid; grid-template-columns: minmax(0, 1fr) 250px; align-items: end; gap: 5vw; max-width: 1180px; margin: 0 auto; padding: 105px 5vw 125px; background: radial-gradient(circle at 78% 38%, #c7e9f4 0, transparent 31%), var(--blue); }
 	.hero-copy { max-width: 730px; }
 	.eyebrow { color: var(--coral); font-size: 11px; font-weight: 700; letter-spacing: .16em; margin: 0 0 22px; text-transform: uppercase; }
@@ -190,5 +202,5 @@ const serviceGroups = [
 	.site-footer { border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 20px; padding-top: 22px; padding-bottom: 27px; color: var(--muted); font-size: 11px; letter-spacing: .02em; }
 	.site-footer a { color: var(--ink); text-decoration: none; }
 	@media (prefers-reduced-motion: reduce) { :global(html) { scroll-behavior: auto; } :global(a) { transition: none; } }
-	@media (max-width: 700px) { .utility-inner { align-items: flex-start; flex-direction: column; gap: 5px; } .utility-links { gap: 14px; } .site-header { align-items: flex-start; padding-top: 20px; } .brand img { height: 72px; } nav { gap: 12px; } nav a:not(.nav-contact) { display: none; } .hero { display: block; padding-top: 72px; padding-bottom: 80px; } .hero-note { margin-top: 55px; } .section-wrap { padding-top: 70px; padding-bottom: 70px; } .section-heading { display: block; } .section-heading h2 { max-width: 340px; } .service-grid, .about, .contact { grid-template-columns: 1fr; } .service-card { min-height: 0; padding: 25px; } .about { gap: 42px; } .site-footer { align-items: flex-start; flex-direction: column; gap: 8px; } }
+	@media (max-width: 700px) { .utility-inner { align-items: flex-start; flex-direction: column; gap: 5px; } .utility-links { gap: 14px; } .site-header { align-items: flex-start; padding-top: 20px; } .brand img { height: 72px; } .desktop-nav-links { display: none; } .mobile-nav { display: block; position: relative; } .mobile-nav summary { color: var(--ink); cursor: pointer; font-size: 13px; font-weight: 700; list-style: none; } .mobile-nav summary::-webkit-details-marker { display: none; } .mobile-nav summary::after { color: var(--coral); content: '+'; margin-left: 8px; } .mobile-nav[open] summary::after { content: '−'; } .mobile-nav-links { background: var(--paper); border: 1px solid var(--line); display: grid; gap: 16px; min-width: 150px; padding: 18px; position: absolute; right: 0; top: calc(100% + 12px); z-index: 2; } .mobile-nav-links a { color: var(--ink); white-space: nowrap; } .hero { display: block; padding-top: 72px; padding-bottom: 80px; } .hero-note { margin-top: 55px; } .section-wrap { padding-top: 70px; padding-bottom: 70px; } .section-heading { display: block; } .section-heading h2 { max-width: 340px; } .service-grid, .about, .contact { grid-template-columns: 1fr; } .service-card { min-height: 0; padding: 25px; } .about { gap: 42px; } .site-footer { align-items: flex-start; flex-direction: column; gap: 8px; } }
 </style>
